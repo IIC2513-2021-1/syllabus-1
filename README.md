@@ -4,8 +4,6 @@
   - [Profesor](#profesor)
   - [Coordinador](#coordinador)
   - [Ayudantes](#ayudantes)
-- [Wiki](#wiki)
-  - [Getting Started](#getting-started)
 - [Foro](#foro)
   - [Etiquetas](#etiquetas)
   - [Procedimiento](#procedimiento)
@@ -49,14 +47,6 @@
 | Diego Solari     | [@dasolari](https://github.com/dasolari)               | dasolari@uc.cl     |
 | Diego Vásquez    | [@dhvasquez](https://github.com/dhvasquez)             | dhvasquez@uc.cl    |
 
-# Wiki
-
-Tendremos mucha información útil en la Wiki del curso, la cual pueden encontrar en el menú superior o haciendo clic [aquí](../../wiki).
-
-## Getting Started
-
-En particular, les sugerimos revisar [esta sección](../../wiki/Getting-Started) en la wiki antes de comenzar con su proyecto.
-
 # Foro
 
 La página de [Issues](../../issues) se utilizará como foro para preguntas.
@@ -65,20 +55,18 @@ La página de [Issues](../../issues) se utilizará como foro para preguntas.
 
 Dentro de Issues, [las entradas se pueden etiquetar dentro de ciertas categorías](https://help.github.com/articles/applying-labels-to-issues-and-pull-requests/) para mantener el orden y facilitar la búsqueda de problemas similares. Una entrada puede tener múltiples etiquetas. Aunque el equipo docente irá etiquetando según corresponda, también puedes adelantarte y clasificar tu pregunta en [la(s) categoría(s) que correspondan](../../labels):
 
-* [Material](../../labels/Material): para discutir sobre el material entregado por el equipo docente.
+
 * [Código](../../labels/C%C3%B3digo): sobre métodos, clases, sintaxis, estándares, etc.
-* [Enunciado o Entrega](../../labels/Enunciado%20o%20Entrega): sobre el enunciado o situación relacionada a alguna entrega de proyecto.
-* [Interrogación](../../labels/Interrogaci%C3%B3n): sobre fechas, contenido, recorreción de interrogaciones, etc.
-* [Materia](../../labels/Materia): sobre conceptos y/o temas vistos en clases o fuera de éstas.
 * [Duplicada](../../labels/Duplicada): pregunta repetida, se hará referencia a la pregunta original.
-* [Packages](../../labels/Packages): consultas acerca de si se puede utilizar cierto package que no está explícitamente indicado en la Wiki.
 * [Git](../../labels/Git): Preguntas relacionadas con `git`
+* [Importante](../../labels/Importante): issues con información importante que **deben** leer.
+* [Interrogación](../../labels/Interrogaci%C3%B3n): sobre fechas, contenido, recorreción de interrogaciones, etc.
 * [Inválida](../../labels/Inv%C3%A1lida): la pregunta no cumple los estándares o viola el procedimiento descrito abajo.
+* [Materia](../../labels/Materia): sobre conceptos y/o temas vistos en clases o fuera de éstas.
+* [Material](../../labels/Material): para discutir sobre el material entregado por el equipo docente.
 * [Meta-pregunta](../../labels/Meta-Pregunta): pregunta sobre cómo y qué preguntar.
 * [Tengo un error](../../labels/Tengo%20un%20error): para preguntar sobre errores o bugs en códigos antes de caer en la desesperación (pero luego de haber buscado apropiadamente en la Web...).
-* [Heroku](../../labels/Heroku): para preguntar sobre errores o dudas que pueden tener con Heroku y el _deploy_ de su _app_.
-* [Postgres](../../labels/Postgres): para preguntar sobre errores o dudas que pueden tener con el manejo de su base de datos.
-* [Importante](../../labels/Importante): issues con información importante que **deben** leer.
+
 
 ## Procedimiento
 
