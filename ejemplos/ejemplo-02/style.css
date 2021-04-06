@@ -1,4 +1,111 @@
+/* Basic */
+
 h1 {
   color: red;
   font-size: 48px;
+}
+
+.secondary-article h3 {
+  font-style: italic;
+}
+
+/* Specificity: 0 0 2 3 */
+.header nav ul li:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+/* Specificity: 0 0 1 2 */
+.main-article p::first-line {
+  color: #FFD966;
+}
+
+.main-article p::first-letter {
+  font-size: 48px;
+}
+
+.secondary-article {
+  background-color: white;
+  color: black;
+}
+
+article {
+  background-color: #37474F;
+  color: #FFD966;
+}
+
+/* Enhancements */
+
+body {
+  background-color: #37474F;
+  color: white;
+  font-size: 18px;
+}
+
+h1 {
+  color: #FFD966;
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+.header {
+  background-color: white;
+}
+
+.header .logo {
+  width: 100px;
+  text-align: center;
+}
+
+.header .logo a {
+  text-decoration: none;
+  color: #444;
+  font-size: 1.5em;
+}
+
+.header .logo a:hover {
+  color: #CCC;
+}
+
+.header nav ul li {
+  color: #444;
+}
+
+.secondary-container .secondary-article {
+  color: #444;
+}
+
+.date-small {
+  font-size: 0.8em;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Display */
+
+.header ul li {
+  display: inline-block;
+  width: 25%;
+  height: 50px;
+  text-align: center;
+  /* https://acncuc.medium.com/a-simple-css-horizontal-navigation-bar-using-inline-block-c507c581db69 */
+  margin-right: -4px;
+}
+
+/* Box model */
+
+.secondary-article {
+  padding: 50px;
+  padding-bottom: 0;
+  border: 4px solid #FFD966;
+  margin: 20px;
+  width: 50%;
+  box-sizing: border-box;
 }
