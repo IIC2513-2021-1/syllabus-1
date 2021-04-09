@@ -109,3 +109,41 @@ footer {
   width: 50%;
   box-sizing: border-box;
 }
+
+.main-container .main-article span {
+  background-color: white;
+  color: #444;
+  padding: 100px;
+  margin: 30px;
+  display: inline-block;
+}
+
+/* Final adjustments */
+
+.header ul li {
+  height: auto;
+  padding: 15px 0;
+}
+
+.secondary-article {
+  margin: 20px auto;
+}
+
+.header, .main-container, .secondary-container {
+  padding: 0 10%;
+}
+
+footer {
+  padding: 20px 10%;
+}
+
+footer p {
+  margin-bottom: 20px;
+}
+
+/* Reset elements */
+
+body, ul, p {
+  margin: 0;
+  padding: 0;
+}
