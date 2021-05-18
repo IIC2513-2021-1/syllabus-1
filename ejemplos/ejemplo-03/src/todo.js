@@ -7,7 +7,9 @@ class TodoList {
     this.todoList.push(task);
   }
 
-  prioritize = function(task) {
+  /* There was an error in the slides of this lecture */
+  /* Here it's corrected */
+  prioritize(task) {
     this.todoList.unshift(task);
   };
 
