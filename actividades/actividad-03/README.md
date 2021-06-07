@@ -2,6 +2,8 @@
 
 > [Código en RunKit](https://runkit.com/sivicencio/5f166db6c06ba6001aaee085)
 
+**Solución**: [haz click aquí](solution.md)
+
 Vamos a poner en práctica el uso de los elementos fundamentales de JavaScript. Comenzaremos con lo más básico y luego iremos incrementando la complejidad. Como recomendación, haz todos los ejercicios, a pesar de que tal vez podrían parecerte muy básicos. Recuerda que estamos construyendo la base para todo lo que viene en el resto del curso.
 
 **Nota**: Esta actividad está pensada para ser desarrollada en la plataforma RunKit, que nos permite ejecutar código en un ambiente Node.js, pero en el browser. Además verás que tiene ciertas similitudes con Jupyter Notebook. Para obtener y poder modificar el código base de la actividad, puedes clickear en `"Clone and edit this document"`. Esto te pedirá iniciar sesión en la plataforma. La forma más simple es utilizando una cuenta Github para iniciar sesión. Luego de hacerlo, se te creará una copia del código base (un notebook) asociada a tu cuenta. En este punto verás que ya puedes comenzar a escribir código.
