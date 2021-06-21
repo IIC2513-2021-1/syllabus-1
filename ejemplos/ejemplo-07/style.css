@@ -31,6 +31,15 @@ header {
   padding: 10px 5px;
 }
 
+.load-todos {
+  margin-bottom: 10px;
+}
+
+.input-error {
+  border: 2px solid red;
+  outline: none;
+}
+
 .completed span {
   text-decoration: line-through;
 }
@@ -51,4 +60,8 @@ header {
   flex: 1;
   padding-left: 5px;
   padding-right: 10px;
+}
+
+.todo-item button {
+  cursor: pointer;
 }
