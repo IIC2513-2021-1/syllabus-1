@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Todo List example</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+      const rootNode = document.getElementById('root');
+      const title = 'Un título';
+      const initialData = [
+        {
+          title: 'Poner atención en clases',
+          completed: false,
+        },
+        {
+          title: 'Escribir un script JS en cliente',
+          completed: false,
+        },
+        {
+          title: 'Comenzar a trabajar en Proyecto 2',
+          completed: true,
+        },
+        {
+          title: 'Prepararme para la Interrogación',
+          completed: true,
+        },
+      ]
+
+      function MyComponent() {
+        return (
+          <h1>{title}</h1>
+        );
+      }
+
+      function TodoInput() {
+        return (
+          <input
+            type="text"
+            className="add-todo"
+            placeholder="Agregar todo y presionar Enter"
+          />
+        );
+      }
+
+      function TodoItem(props) {
+        const { todo } = props;
+        return (
+          <li className="todo-item">
+            <input type="checkbox" checked={todo.completed} />
+            <span>{todo.title}</span>
+            <button>🗑</button>
+          </li>
+        );
+      }
+
+      function TodoList() {
+        return (
+          <main className="centered">
+            <div className="container">
+              <header>
+                <h1>Todo list</h1>
+                <TodoInput />
+              </header>
+              <section className="todo-list">
+                <ul>
+                  <TodoItem todo={initialData[0]} />
+                  <TodoItem todo={initialData[1]} />
+                  <TodoItem todo={initialData[2]} />
+                  <TodoItem todo={initialData[3]} />
+                </ul>
+              </section>
+            </div>
+          </main>
+        );
+      }
+
+      ReactDOM.render(<TodoList />, rootNode);
+    </script>
+  </body>
+</html>
