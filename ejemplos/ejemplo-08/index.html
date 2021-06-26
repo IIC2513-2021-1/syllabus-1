@@ -15,24 +15,28 @@
     <script type="text/babel">
       const rootNode = document.getElementById('root');
       const title = 'Un título';
-      const initialData = [
+      const INITIAL_STATE = [
         {
+          id: 1,
           title: 'Poner atención en clases',
           completed: false,
         },
         {
+          id: 2,
           title: 'Escribir un script JS en cliente',
           completed: false,
         },
         {
+          id: 3,
           title: 'Comenzar a trabajar en Proyecto 2',
           completed: true,
         },
         {
+          id: 4,
           title: 'Prepararme para la Interrogación',
           completed: true,
         },
-      ]
+      ];
 
       function MyComponent() {
         return (
@@ -52,8 +56,9 @@
 
       function TodoItem(props) {
         const { todo } = props;
+        // console.log(todo);
         return (
-          <li className="todo-item">
+          <li className={`todo-item${todo.completed ? ' completed' : ''}`}>
             <input type="checkbox" checked={todo.completed} />
             <span>{todo.title}</span>
             <button>🗑</button>
@@ -62,6 +67,44 @@
       }
 
       function TodoList() {
+        const [todos, setTodos] = React.useState(INITIAL_STATE);
+
+        const removeLastTodoItem = () => {
+          const newTodos = todos.slice(0, todos.length - 1);
+          setTodos(newTodos);
+        };
+
+        const toggleLastTodoItem = () => {
+          const newTodos = [...todos];
+          const lastTodo = newTodos[todos.length - 1];
+          lastTodo.completed = !lastTodo.completed;
+          setTodos(newTodos);
+        };
+
+        // Call removeLastTodoItem every second
+        // React.useEffect(() => {
+        //   let timeoutId;
+        //   if (todos.length) {
+        //     timeoutId = setTimeout(() => {
+        //       removeLastTodoItem();
+        //     }, 1000);
+        //   }
+        //   return () => clearTimeout(timeoutId);
+        // });
+
+        // Call toggleLastTodoItem after 1 second
+        // React.useEffect(() => {
+        //   let timeoutId;
+        //   if (todos.length) {
+        //     timeoutId = setTimeout(() => {
+        //       toggleLastTodoItem();
+        //     }, 1000);
+        //   }
+        //   return () => clearTimeout(timeoutId);
+        // }, []);
+
+        // console.log(todos);
+
         return (
           <main className="centered">
             <div className="container">
@@ -71,10 +114,9 @@
               </header>
               <section className="todo-list">
                 <ul>
-                  <TodoItem todo={initialData[0]} />
-                  <TodoItem todo={initialData[1]} />
-                  <TodoItem todo={initialData[2]} />
-                  <TodoItem todo={initialData[3]} />
+                  {todos.map((todo) => (
+                    <TodoItem key={todo.id} todo={todo} />
+                  ))}
                 </ul>
               </section>
             </div>
