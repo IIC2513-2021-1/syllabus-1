@@ -33,6 +33,11 @@ export default function TodoList() {
     setTodos(todos.slice(0, todos.length - 1));
   };
 
+  const handleRemoveTodoItem = (id) => {
+    const newTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(newTodos);
+  };
+
   // eslint-disable-next-line no-unused-vars
   const toggleLastTodoItem = () => {
     const newTodos = [...todos];
@@ -51,7 +56,11 @@ export default function TodoList() {
         <section className="todo-list">
           <ul>
             {todos.map((todo) => (
-              <TodoItem key={todo.id} todo={todo} />
+              <TodoItem
+                key={todo.id}
+                todo={todo}
+                onRemove={handleRemoveTodoItem}
+              />
             ))}
           </ul>
         </section>

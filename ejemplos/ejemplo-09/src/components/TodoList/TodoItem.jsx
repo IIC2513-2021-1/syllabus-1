@@ -2,7 +2,11 @@
 import React from 'react';
 
 export default function TodoItem(props) {
-  const { todo } = props;
+  const { todo, onRemove } = props;
+
+  const handleRemove = function handleRemove() {
+    onRemove(todo.id);
+  };
 
   return (
     <li className={`todo-item${todo.completed ? ' completed' : ''}`}>
@@ -12,7 +16,7 @@ export default function TodoItem(props) {
         onChange={() => {}}
       />
       <span>{todo.title}</span>
-      <button type="button">🗑</button>
+      <button type="button" onClick={handleRemove}>🗑</button>
     </li>
   );
 }
