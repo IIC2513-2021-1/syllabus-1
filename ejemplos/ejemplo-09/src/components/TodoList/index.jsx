@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { /* useEffect, */useState } from 'react';
 import TodoInput from './TodoInput';
 import TodoItem from './TodoItem';
 
@@ -26,7 +26,7 @@ const initialData = [
 ];
 
 export default function TodoList() {
-  const [todos, setTodos] = React.useState(initialData);
+  const [todos, setTodos] = useState(initialData);
 
   // eslint-disable-next-line no-unused-vars
   const removeLastTodoItem = () => {
@@ -38,6 +38,18 @@ export default function TodoList() {
     setTodos(newTodos);
   };
 
+  const handleToggleTodoItem = (id) => {
+    const newTodos = todos.map((todo) => {
+      if (todo.id !== id) return todo;
+
+      return {
+        ...todo,
+        completed: !todo.completed,
+      };
+    });
+    setTodos(newTodos);
+  };
+
   // eslint-disable-next-line no-unused-vars
   const toggleLastTodoItem = () => {
     const newTodos = [...todos];
@@ -46,25 +58,50 @@ export default function TodoList() {
     setTodos(newTodos);
   };
 
+  // useEffect(() => {
+  //   console.log('%cTodoList: effect after every render', 'color: cornflowerblue');
+  //   return () => console.log(
+  //     '%cTodoList: effect CLEANUP after every render but before new effect',
+  //     'color: cornflowerblue',
+  //   );
+  // });
+
+  // useEffect(() => {
+  //   console.log('%cTodoList: effect after mounting', 'color: lightsalmon');
+  //   return () => console.log(
+  //     '%cTodoList: effect CLEANUP when unmounting',
+  //     'color: lightsalmon',
+  //   );
+  // }, []);
+
+  // useEffect(() => {
+  //   console.log('%cTodoList: effect after todos state is updated', 'color: darkseagreen');
+  //   return () => console.log(
+  //     '%cTodoList: effect CLEANUP after todos state is updated',
+  //     'color: darkseagreen',
+  //   );
+  // }, [todos]);
+
+  // console.log('%cTodoList: render', 'color: orchid');
+
   return (
-    <main className="centered">
-      <div className="container">
-        <header>
-          <h1>Todo list</h1>
-          <TodoInput />
-        </header>
-        <section className="todo-list">
-          <ul>
-            {todos.map((todo) => (
-              <TodoItem
-                key={todo.id}
-                todo={todo}
-                onRemove={handleRemoveTodoItem}
-              />
-            ))}
-          </ul>
-        </section>
-      </div>
-    </main>
+    <div className="container">
+      <header>
+        <h1>Todo list</h1>
+        <TodoInput />
+      </header>
+      <section className="todo-list">
+        <ul>
+          {todos.map((todo) => (
+            <TodoItem
+              key={todo.id}
+              todo={todo}
+              onRemove={() => handleRemoveTodoItem(todo.id)}
+              onToggle={() => handleToggleTodoItem(todo.id)}
+            />
+          ))}
+        </ul>
+      </section>
+    </div>
   );
 }
