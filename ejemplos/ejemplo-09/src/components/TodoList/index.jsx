@@ -1,5 +1,5 @@
 import React, { /* useEffect, */useState } from 'react';
-import TodoInput from './TodoInput';
+import TodoForm from './TodoForm';
 import TodoItem from './TodoItem';
 
 const initialData = [
@@ -50,6 +50,17 @@ export default function TodoList() {
     setTodos(newTodos);
   };
 
+  const handleAddTodo = (title, completed = false) => {
+    setTodos((prevTodos) => [
+      ...prevTodos,
+      {
+        id: Number(prevTodos[prevTodos.length - 1].id) + 1,
+        title,
+        completed,
+      },
+    ]);
+  };
+
   // eslint-disable-next-line no-unused-vars
   const toggleLastTodoItem = () => {
     const newTodos = [...todos];
@@ -88,7 +99,7 @@ export default function TodoList() {
     <div className="container">
       <header>
         <h1>Todo list</h1>
-        <TodoInput />
+        <TodoForm onAdd={handleAddTodo} />
       </header>
       <section className="todo-list">
         <ul>
